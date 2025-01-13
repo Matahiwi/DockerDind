@@ -15,12 +15,12 @@ RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Configure Docker to run as non-root user
-RUN groupadd docker
+#RUN groupadd docker
 RUN usermod -aG docker jenkins
 
 # Install Docker Compose
-RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-    chmod +x /usr/local/bin/docker-compose
+#RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
+#    chmod +x /usr/local/bin/docker-compose
 
 # Enable DinD
 RUN mkdir -p /var/lib/docker
